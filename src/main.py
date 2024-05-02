@@ -1,22 +1,17 @@
-from datetime import datetime
 import sys
-from plyer import notification
+import time
+from win11toast import toast
+from setar_alarme import Alarm_config
 
-# notification.notify(
-#     title = "teste",
-#     message= "boh jogar regezada"
-# )
+def send_notification(title: str, message: str):
+    toast(
+        title,
+        message,
+        app_id = 'despertador python'
+    )
+
+# print(f'alarme definido para {datetime.strptime(setting_alarm(), "%d-%m-%Y%H:%M:%S").strftime("%d-%m-%Y as %H:%M:%S")}')
 
 
-current_time = datetime.now()
-time_print = current_time.strftime('%H:%M:%S')
-day_print = current_time.strftime("%d-%m-%Y")
-
-alarme = print('Que horas o alarme?\n')
-
-hour = str(input('hora:') + ':')
-minute = str(input('\nminuto:') + ':')
-time = day_print + hour + minute + datetime.now().strftime('%S')
-
-print(f'alarme definido para {datetime.strptime(time, "%d-%m-%Y%H:%M:%S").strftime('%d-%m-%Y as %H:%M:%S')}')
-
+alarme = Alarm_config()
+alarme.setting_alarm()
