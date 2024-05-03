@@ -26,9 +26,9 @@ class Alarm_config:
 
         valid_hour = False
         while valid_hour == False:
-            self.hour = int(input('Hora: '))
+            self.hour = input('Hora: ')
 
-            if not isinstance(self.hour, int) or self.hour > 25 or self.hour < 0:
+            if int(self.hour) > 25 or int(self.hour) < 0:
                 print('Hora tem que ser um numero por exemplo 08, e tem que ser maior que 0 e menor que 24')
             else:
                 hora = str(self.hour) + ':'
@@ -37,9 +37,9 @@ class Alarm_config:
 
         valid_minute = False
         while not valid_minute:
-            self.minute = int(input('\nMinuto: '))
+            self.minute = input('\nMinuto: ')
 
-            if not isinstance(self.minute, int) or self.minute > 60 or self.minute < 0:
+            if int(self.minute) > 60 or int(self.minute) < 0:
                 print('minuto tem que ser um numero por exemplo 30, e tem que ser maior que 0 e menor que 60')
             else:
                 minuto = str(self.minute)
